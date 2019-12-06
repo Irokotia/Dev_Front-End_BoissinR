@@ -7,7 +7,7 @@
    <link href="main.css" rel="stylesheet">
     <title>Destinations</title>
   </head>
-  <body>
+  <body onload="addAllDestinations()">
     <nav>
       <ul id="menu">
           <a class="button-home" href="index.html"> <img src="img/home.png" alt=""> </a>
@@ -37,35 +37,16 @@
     <hr>
     <h1>Destinations</h1>
     <table>
-      <thead>
+      <thead >
+      <tr id="headdestinations">
         <th>Destination</th>
         <th>Pays</th>
         <th>Circuit</th>
         <th>Prix</th>
         <th>Réservation</th>
+      </tr>
       </thead>
-      <tbody>
-        <tr>
-          <td><img src="img/Nice.jpg" alt=""></td>
-          <td>France</td>
-          <td>Circuit plage, hôte 4*, Lorem ipsum dolor sit amet</td>
-         <td>800€</td>
-         <td><button type="button" name="button">Découvrir</button></td>
-        </tr>
-        <tr>
-          <td><img src="img/Rome.jpg" alt=""></td>
-          <td>Italie</td>
-          <td>Circuit Ruine, hôte 4*, Lorem ipsum dolor sit amet</td>
-         <td>800€</td>
-         <td><button type="button" name="button">Découvrir</button></td>
-        </tr>
-        <tr>
-          <td><img src="img/madrid.jpg" alt=""></td>
-          <td>Espagne</td>
-          <td>Circuit Ville, hôte 4*, Lorem ipsum dolor sit amet</td>
-         <td>800€</td>
-         <td><button type="button" name="button">Découvrir</button></td>
-        </tr>
+      <tbody  id="destinations">
       </tbody>
 
     </table>
@@ -79,4 +60,5 @@
       <a href="#" class="fa fa-pinterest"></a>
       <a href="#" class="fa fa-youtube"></a>
 </footer>
+  <script type="text/javascript" src="Tableaux_Dynamique.js"></script>
 </html>

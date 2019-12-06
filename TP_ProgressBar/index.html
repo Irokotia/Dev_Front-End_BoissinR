@@ -1,0 +1,90 @@
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Progress Bar</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script> <!-- Lien vers jquery -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <style>
+        .green::-moz-progress-bar { background: green; }
+        .green::-webkit-progress-value { background: green; }
+        .green { background: green; }
+        .orange::-moz-progress-bar { background: orange; }
+        .orange::-webkit-progress-value { background: orange; }
+        .orange { background: orange; }
+        .red::-moz-progress-bar { background: red; }
+        .red::-webkit-progress-value { background: red; }
+        .red { background: red; }
+        .blue::-moz-progress-bar { background: blue; }
+        .blue::-webkit-progress-value { background: blue; }
+        .blue { background: blue; }
+    </style>
+</head>
+<body>
+<progress id="barreProgression" value="0" max="100"></progress>
+<br>
+<span class="progress-value">Téléchargement 0%</span>
+<br>
+<button id="startButton" value="Start">Start</button>
+<button id="resetButton" value="Reset">Reset</button>
+</body>
+
+<script>
+    $(document).ready(function() {
+
+        /* Créer une barre de progression */
+        var barreProgression = $('#barreProgression');
+        var max = barreProgression.attr('max');
+        var time = 100;
+        var value = barreProgression.val();
+        var animation;
+
+        /* Start */
+        $('#startButton').on("click", function() {
+            animation = setInterval(function() {
+                telechargement();
+            }, time);
+        });
+
+        // Avancement de la barre de progression
+        // appeler autant de fois que la valeur time
+        function telechargement() {
+            value += 1; // indentation
+            addValue = barreProgression.val(value);
+
+            $('.progress-value').html('Téléchargement '+ value + '%'); // On met le html au meme niveau que la valeur
+
+            // En fonction de la valeur de la progress bar nous updatons la couleur
+            if (value < 33) {
+                barreProgression.addClass('green');
+            } else if (value > 33 && value < 66) {
+                barreProgression.removeClass('green');
+                barreProgression.addClass('orange');
+            } else if (value > 66) {
+                barreProgression.removeClass('orange');
+                barreProgression.addClass('red');
+            }
+
+            // Quand on attends le maximum de la progressbar
+            if (value == max) {
+                barreProgression.removeClass('red');
+                barreProgression.addClass('blue');
+                $('.progress-value').html('Téléchargement Terminé !');
+                // On arrête la progress barre
+                clearInterval(animation);
+                value = 0;
+                return false;
+            }
+        };
+
+        /* Reset */
+        $("#resetButton").on("click", function () {
+            $('.progress-value').html('Téléchargement 0%');
+            clearInterval(animation);
+            value = 0;
+            barreProgression.val(0);
+            return false;
+        });
+
+    });
+</script>
+</html>
