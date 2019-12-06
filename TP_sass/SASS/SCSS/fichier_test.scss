@@ -1,0 +1,131 @@
+
+// Question 1
+$elements: 4;
+@for $i from 1 through $elements {
+  .taille-#{$i}{
+    width: (100% / $elements)*$i;
+  }
+}
+
+// Question 2
+@mixin generer_classes_taille(){
+  $elements: 4;
+  @for $i from 1 through $elements {
+    .taille-Mixin-#{$i}{
+      width: (100% / $elements)*$i;
+    }
+  }
+}
+@include generer_classes_taille();
+
+// Question 3
+$i:0;
+$tableau_tailles :"petit","standard","moyen","grand";
+@each $element in $tableau_tailles{
+  .taille-#{$element}{
+    $i:$i+1;
+    width : (100% / length($tableau_tailles)) * $i;
+  }
+}
+
+@each $taille, $width in (petite, 25%), (standard, 50%), (moyenne, 75%), (grande, 100%) {
+    .taille-#{$taille} {
+        width: $width;
+    }
+}
+
+// Question 4
+@mixin tableau_tailles($listes){
+  $i:0;
+  @each $element in $listes{
+    .taille-#{$element}{
+      $i:$i+1;
+      width : (100% / length($listes)) * $i;
+    }
+  }
+}
+$tableau_tailles : "petit","standard","moyen","grand";
+@include tableau_tailles($tableau_tailles);
+
+// Question 5
+@mixin tableau_tailles($classe,$listes){
+  $i:0;
+  @each $element in $listes{
+    .#{$classe}-#{$element}{
+      $i:$i+1;
+      width : (100% / length($listes)) * $i;
+    }
+  }
+}
+$tableau_tailles : "petit","standard","moyen","grand";
+@include tableau_tailles("bouton",$tableau_tailles);
+
+// Question 6
+@function returnFirstInArray($array){
+  @return nth($array,1);
+}
+$tableau_tailles : petit,standard,moyen,grand;
+  .bouton::before{
+    content:returnFirstInArray($tableau_tailles);
+  }
+// Question 7
+@function returnLastInArray($array){
+  @return nth($array,length($array));
+}
+$tableau_tailles : petit,standard,moyen,grand;
+  .bouton::after{
+    content:returnLastInArray($tableau_tailles);
+  }
+
+// Question 8
+$destinations: (france:"France",allemagne:"Allemagne",espagne:"Espagne");
+
+// Question 9
+@each $destination in $destinations{
+  .ville-#{nth($destination,1)}::before{
+    display: block;
+    content: "#{nth($destination,2)}";
+  }
+}
+// Question 10
+@mixin ajouterTexte($prefix, $liste, $position){
+    @each $object in $liste{
+        .#{$prefix}-#{nth($object,1)}::#{$position} {
+            display: block;
+            content: "#{nth($object,2)}";
+        }
+    }
+  }
+
+@include ajouterTexte("ville", $destinations, "after");
+
+// Question 11
+ $social: (facebook: "#3b5998", twitter: "#00acee", linkedin: "#0077B5", instagram: "#833AB4", pinterest: "#C92228", youtube: "#FF0000");
+  // Question 12
+  @each $element in $social{     .fa-#{nth($element,1)} {
+             background: #FFFFFF;
+             color: #{nth($element,2)};
+           }
+          }
+// Question 13
+// Dans HTML :
+// Question 14
+@mixin eclaircirIcon($pourcentage){
+        @each $element in $social {
+              .fa-#{nth($element,1)} {
+                background: lighten(#{nth($element,2)}, $pourcentage);
+                color: #{nth($element,2)};
+              }
+          @include eclaircirIcon(15);
+        }
+}
+// Question 15
+@mixin changeColorIcon($change, $pourcentage) {
+       @each $element in $social {
+                  .fa-#{nth($element,1)} {
+                    background: $change (#{nth($element,2)}, $pourcentage);
+                    color: #{nth($element,2)};
+                  }
+      }
+  @include changeColorIcon("darken", 15);
+}

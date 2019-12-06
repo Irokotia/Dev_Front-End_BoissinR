@@ -1,0 +1,127 @@
+.taille-1 {
+  width: 25%; }
+
+.taille-2 {
+  width: 50%; }
+
+.taille-3 {
+  width: 75%; }
+
+.taille-4 {
+  width: 100%; }
+
+.taille-Mixin-1 {
+  width: 25%; }
+
+.taille-Mixin-2 {
+  width: 50%; }
+
+.taille-Mixin-3 {
+  width: 75%; }
+
+.taille-Mixin-4 {
+  width: 100%; }
+
+.taille-petit {
+  width: 25%; }
+
+.taille-standard {
+  width: 50%; }
+
+.taille-moyen {
+  width: 75%; }
+
+.taille-grand {
+  width: 100%; }
+
+.taille-petite {
+  width: 25%; }
+
+.taille-standard {
+  width: 50%; }
+
+.taille-moyenne {
+  width: 75%; }
+
+.taille-grande {
+  width: 100%; }
+
+.taille-petit {
+  width: 25%; }
+
+.taille-standard {
+  width: 50%; }
+
+.taille-moyen {
+  width: 75%; }
+
+.taille-grand {
+  width: 100%; }
+
+.bouton-petit {
+  width: 25%; }
+
+.bouton-standard {
+  width: 50%; }
+
+.bouton-moyen {
+  width: 75%; }
+
+.bouton-grand {
+  width: 100%; }
+
+.bouton::before {
+  content: petit; }
+
+.bouton::after {
+  content: grand; }
+
+.ville-france::before {
+  display: block;
+  content: "France"; }
+
+.ville-allemagne::before {
+  display: block;
+  content: "Allemagne"; }
+
+.ville-espagne::before {
+  display: block;
+  content: "Espagne"; }
+
+.ville-france::after {
+  display: block;
+  content: "France"; }
+
+.ville-allemagne::after {
+  display: block;
+  content: "Allemagne"; }
+
+.ville-espagne::after {
+  display: block;
+  content: "Espagne"; }
+
+.fa-facebook {
+  background: #FFFFFF;
+  color: #3b5998; }
+
+.fa-twitter {
+  background: #FFFFFF;
+  color: #00acee; }
+
+.fa-linkedin {
+  background: #FFFFFF;
+  color: #0077B5; }
+
+.fa-instagram {
+  background: #FFFFFF;
+  color: #833AB4; }
+
+.fa-pinterest {
+  background: #FFFFFF;
+  color: #C92228; }
+
+.fa-youtube {
+  background: #FFFFFF;
+  color: #FF0000; }
+
+/*# sourceMappingURL=fichier_test.css.map */
