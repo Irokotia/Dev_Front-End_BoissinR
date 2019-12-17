@@ -2,7 +2,6 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-        <link href="../Tp_sass/SASS/CSS/fichier_test.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
    <link href="main.css" rel="stylesheet">
     <title>Destinations</title>
@@ -48,8 +47,14 @@
       </thead>
       <tbody  id="destinations">
       </tbody>
-
     </table>
+    <form id="form_ajout">
+        <input type="file" accept="image/jpg" id="image" name="image" required>
+        <input type="text" id="pays" name="pays" required>
+        <input type="text" id="circuit" name="circuit" required>
+        <input type="number" id="prix" name="prix" required>
+        <input type="submit" id="submitDestination" value="Ajouter">
+    </form>
   </body>
 
 <footer>
