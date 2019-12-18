@@ -48,7 +48,7 @@ function addAllDestinations(){
 
             document.getElementById(property).innerHTML += '</td>';
         }
-        document.getElementById(property).innerHTML += '<td><button type="button" name="button">' + 'Decrouvrir'+ '</button></td>';
+        document.getElementById(property).innerHTML += '<td><button type="button" name="button">' + 'Decouvrir'+ '</button></td>';
         document.getElementById(property).innerHTML += '<td><button type="button" name="button" onclick="removeDestination(\''+ property +'\')">' + 'Supprimer'+ '</button>' + '<button type="button" name="button" id="Editer' + property + '" onclick="editDestination(\'' + property + '\')">' + 'Editer'+ '</button></td>';
         document.getElementById("destinations").innerHTML += '</tr>';
         index ++;
@@ -104,22 +104,20 @@ document.getElementsByTagName("form").item(0).addEventListener("submit", event =
 });
 
 function addNewDestination(img,input,pays,circuit,prix) {
-
-    // Cela aurait pu être fait en un boucle , ça serait plus simple mais j'ai préféré faire comme cela
-    console.log(img);
     destination = document.getElementById('destinations');
-    var namediv = pays + circuit + prix + img;
+    var namediv = pays;
     var boolean = false;
-    if(document.getElementById("destinations").hasChildNodes()){
+    if (document.getElementById("destinations").hasChildNodes()) {
+
         var children = document.getElementById("destinations").childNodes;
-        for(var i = 1; i < children.length;i++){
+        for (var i = 1; i < children.length; i++) {
             var nameDestination = children[i]['id'];
-            if(nameDestination.search(namediv) != -1){
+            if (nameDestination.search(namediv) != -1) {
                 boolean = true;
             }
         }
     }
-    if(boolean == false) {
+    if (boolean == false) {
         // créer une nouvelle ligne
         var tr = document.createElement('tr');
         tr.setAttribute('id', 'Destination' + namediv);
@@ -142,18 +140,21 @@ function addNewDestination(img,input,pays,circuit,prix) {
 
         // créer un nouveau td dans cette ligne
         var td2 = document.createElement('td');
+        td2.id = "Destination" + namediv + "Pays";
         tr.appendChild(td2);
         var td2Text = document.createTextNode(pays);
         td2.appendChild(td2Text);
 
         // créer un nouveau td dans cette ligne
         var td3 = document.createElement('td');
+        td3.id = "Destination" + namediv + "Circuit";
         tr.appendChild(td3);
         var td3Text = document.createTextNode(circuit);
         td3.appendChild(td3Text);
 
         // créer un nouveau td dans cette ligne
         var td4 = document.createElement('td');
+        td4.id = "Destination" + namediv + "Prix";
         tr.appendChild(td4);
         var td4Text = document.createTextNode(prix);
         td4.appendChild(td4Text);
@@ -180,12 +181,13 @@ function addNewDestination(img,input,pays,circuit,prix) {
         var td6btn2 = document.createElement('button');
         td6btn2.setAttribute('name', 'button');
         td6btn2.setAttribute('type', 'button');
-        td6btn2.setAttribute('onClick', 'editDestination(\'' + namediv + '\')');
+        td6btn2.setAttribute('onClick', 'editDestination(\'' + "Destination" + namediv + '\')');
+        td6btn2.id = "EditerDestination" + namediv;
         var td6textbtn2 = document.createTextNode('Editer');
         td6btn2.appendChild(td6textbtn2);
         td6.appendChild(td6btn);
         td6.appendChild(td6btn2);
-    }else{
+    } else {
         alert('Cette destination est déjà existante');
     }
 }
