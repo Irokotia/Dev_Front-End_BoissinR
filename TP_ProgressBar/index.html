@@ -79,6 +79,9 @@
 
         /* Reset */
         $("#resetButton").on("click", function () {
+            barreProgression.removeClass('blue');
+            barreProgression.removeClass('red');
+            barreProgression.removeClass('orange');
             $('.progress-value').html('Téléchargement 0%');
             clearInterval(animation);
             $('#startButton').prop("disabled",false);

@@ -1,0 +1,13 @@
+body {
+  color: blue; }
+
+menu {
+  font-size: 40px; }
+
+a {
+  font-weight: bold;
+  text-decoration: none; }
+  a:visited {
+    text-decoration: underline; }
+
+/*# sourceMappingURL=fichier_test.css.map */
