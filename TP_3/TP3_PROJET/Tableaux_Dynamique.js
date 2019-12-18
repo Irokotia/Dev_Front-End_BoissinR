@@ -49,7 +49,7 @@ function addAllDestinations(){
             document.getElementById(property).innerHTML += '</td>';
         }
         document.getElementById(property).innerHTML += '<td><button type="button" name="button">' + 'Decrouvrir'+ '</button></td>';
-        document.getElementById(property).innerHTML += '<td><button type="button" name="button" onclick="removeDestination(\''+ property     +'\')">' + 'Supprimer'+ '</button>' + '<button type="button" name="button" id="Editer" onclick="editDestination(\''+ property +'\')">' + 'Editer'+ '</button></td>';
+        document.getElementById(property).innerHTML += '<td><button type="button" name="button" onclick="removeDestination(\''+ property +'\')">' + 'Supprimer'+ '</button>' + '<button type="button" name="button" id="Editer' + property + '" onclick="editDestination(\'' + property + '\')">' + 'Editer'+ '</button></td>';
         document.getElementById("destinations").innerHTML += '</tr>';
         index ++;
     }
@@ -69,25 +69,22 @@ function removeDestination(img){
     }
 }
 
-function editDestination(img){
-    // on se sert de l'image pour récuper la destination car la ligne porte comme id "Destination" + nom de l'img
-    if(document.getElementById("destinations").hasChildNodes()){
-        var children = document.getElementById("destinations").childNodes;
-        for(var i = 1; i < children.length;i++){
-            var nameDestination = children[i]['id'];
-            if(nameDestination.search(img) != -1){
-                var newChildNode = document.createElement('input');
-                var childrenligne = children[i].childNodes;
-                for(var j = 0;j < childrenligne.length;j++){
-                    console.log(childrenligne[j]);
-                    if(childrenligne[j]['id'].search('destination')){
-                        document.createElement('input');
-                    }
-                }
-            }
-        }
+function editDestination(id) {
+    var button = "Editer" + id;
+    var pays = id + "Pays";
+    var circuit = id + "Circuit";
+    var prix = id + "Prix";
+    if (document.getElementById(button).innerText == "Editer") {
+        document.getElementById(button).innerText = "Finir";
+        document.getElementById(pays).setAttribute("contenteditable", true);
+        document.getElementById(circuit).setAttribute("contenteditable", true);
+        document.getElementById(prix).setAttribute("contenteditable", true);
+    } else {
+        document.getElementById(button).innerText = "Editer";
+        document.getElementById(pays).setAttribute("contenteditable", false);
+        document.getElementById(circuit).setAttribute("contenteditable", false);
+        document.getElementById(prix).setAttribute("contenteditable", false);
     }
-
 }
 
 document.getElementsByTagName("form").item(0).addEventListener("submit", event => {
