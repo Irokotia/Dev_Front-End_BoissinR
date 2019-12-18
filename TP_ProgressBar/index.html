@@ -42,6 +42,7 @@
         $('#startButton').on("click", function() {
             animation = setInterval(function() {
                 telechargement();
+                $('#startButton').prop("disabled",true);
             }, time);
         });
 
@@ -80,6 +81,7 @@
         $("#resetButton").on("click", function () {
             $('.progress-value').html('Téléchargement 0%');
             clearInterval(animation);
+            $('#startButton').prop("disabled",false);
             value = 0;
             barreProgression.val(0);
             return false;
