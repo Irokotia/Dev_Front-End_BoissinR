@@ -38,19 +38,19 @@
     <h1>Contact</h1>
       <form action="#" method="post">
         <label for="prenom">Prenom :</label>
-        <input type="text" name="prenom" placeholder="Youri" required>
+        <input type="text" name="prenom" id="prenom" placeholder="Youri" required>
 
         <label for="nom">Nom :</label>
-        <input type="text" name="nom" placeholder="Boyka" required>
+        <input type="text" name="nom" id="nom" placeholder="Boyka" required>
 
         <label for="adressemail">Adresse mail :</label>
-        <input type="email" name="adressemail" placeholder="boykaYouri@gmail.fr" required>
+        <input type="email" name="adressemail" id="adressemail" placeholder="boykaYouri@gmail.fr" required>
 
         <label for="numéro">Numéro :</label>
-        <input type="phone" name="numéro" placeholder="06 42 51 64 87" pattern="^((\+\d{1,3}(-| )?\(?\d\)?(-| )?\d{1,5})|(\(?\d{2,6}\)?))(-| )?(\d{3,4})(-| )?(\d{4})(( x| ext)\d{1,5}){0,1}$">
+        <input type="phone" name="numéro" id="numéro" placeholder="06 42 51 64 87" pattern="^((\+\d{1,3}(-| )?\(?\d\)?(-| )?\d{1,5})|(\(?\d{2,6}\)?))(-| )?(\d{3,4})(-| )?(\d{4})(( x| ext)\d{1,5}){0,1}$">
 
         <label for="message">Message :</label>
-        <textarea name="message" rows="8" cols="80" required ></textarea>
+        <textarea name="message" rows="8" cols="80" id="message" required ></textarea>
 
 
         <button type="submit" name="button" value="submit">Envoyer</button>

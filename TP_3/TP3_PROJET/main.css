@@ -227,9 +227,9 @@ footer .fa {
   text-decoration: none;
 }
 
-form#form_ajout input#image { display:inline-block; width: 300px; margin-left: 150px; margin-right: 150px; }
-form#form_ajout input#pays { display:inline-block; width: 100px; margin-right: 25px;  }
-form#form_ajout input#circuit { display:inline-block; width: 500px; height:50px;margin-left: 5px; margin-right: 50px }
-form#form_ajout input#prix { display:inline-block; width: 100px; margin-left: 50px;margin-right: 275px}
+form#form_ajout input#image { display:inline-block; width: 300px; margin-right: 175px }
+form#form_ajout input#pays { display:inline-block; width: 75px;}
+form#form_ajout input#circuit { display:inline-block; width: 475px; height:50px; margin-left: 15px }
+form#form_ajout input#prix { display:inline-block; width: 75px; margin-left: 10px; margin-right: 220px}
 form#form_ajout input[type=submit] {display:inline-block; width: 100px; color:#fff; background-color:green; }
 
