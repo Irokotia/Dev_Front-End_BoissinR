@@ -17,7 +17,6 @@ var selectourIcon = L.icon({
 var framIcon = L.icon({
     iconUrl : 'img/marqueurmap2.png',
     iconSize :  [38,38],
-
 });
 var havasIcon = L.icon({
     iconUrl : 'img/marqueurmap3.png',
@@ -25,14 +24,21 @@ var havasIcon = L.icon({
     // rajout de la classe blinking pour l'animation
     className: 'blinking'
 });
+var thomasCookIcon = L.icon({
+    iconUrl : 'img/marqueurmap4.png',
+    iconSize :  [38,38],
+});
 
 // Création des différents marqueurs
 var selectourMarker = L.marker([45.190689,5.728987],{icon : selectourIcon}).addTo(mymap);
 var framMarker = L.marker([45.18827,5.73036],{icon : framIcon}).addTo(mymap);
 var havasMarker = L.marker([45.191536,5.722979],{icon : havasIcon}).addTo(mymap);
+var thomasCookMarker = L.marker([45.188405,5.724879],{icon : thomasCookIcon}).addTo(mymap);
+
 
 // Création des PopUp sur les différents marqueurs
 selectourMarker.bindPopup("<b> Agence Selectour </b>").openPopup();
+thomasCookMarker.bindPopup("<b> Agence Thomas Cook </b>").openPopup();
 framMarker.bindPopup("<b> Agence de voyages Fram </b>").openPopup();
 havasMarker.bindPopup("<b> Agence Havas Voyages </b> <b style='color:red'>(PRINCIPALE)</b>").openPopup();
 

@@ -254,10 +254,12 @@ h3{
 .section{
   margin-top: 20px;
   text-align: center;
-  box-shadow: 0 20px 30px rgba(0,0,0,0.39), 0 16px 23px rgba(0,0,0,0.33);
+}
+.information {
   width: 800px;
   margin-left: auto;
   margin-right: auto;
+
 }
 .carousel-slide {
   margin: auto;
@@ -289,10 +291,13 @@ h3{
 .label-numero{
   display: inline;
 }
-
 .num-aide{
   margin-left: 3px;
   display: inline;
+}
+.email-aide{
+    margin-left: 3px;
+    display: inline;
 }
 
 
